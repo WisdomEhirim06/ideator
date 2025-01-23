@@ -1,1 +1,1 @@
-"# ideator" 
+# ideator 
