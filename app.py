@@ -26,7 +26,7 @@ Requirements:
 - Provide brief one or two sentence description
 - Must cut across different fields uniquely and to different regions
 - Solves a problem that is not already solved
-- Be creative and unexpected
+- Be creative and unexpected|3.00
 
 Format your response to be a concise and compelling startup idea without sounding like an AI response""",
     
