@@ -105,8 +105,10 @@ def generate_with_openrouter(prompt):
                 }
             ],
             "max_tokens": 150,
-            "temperature": 0.9,
-            "top_p": 1.0
+            "temperature": 0.8,
+            "top_p": 0.9,
+            "frequency_penalty": 0.5,
+            "presence_penalty": 0.5 
         }
 
         # Headers for OpenRouter API
