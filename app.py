@@ -10,7 +10,7 @@ load_dotenv()
 
 # Initialize model
 
-OPENROUTER_API_KEY = os.getenv('OPENAI_API_KEY')
+OPENROUTER_API_KEY = os.getenv('OPENROUTER_API_KEY')
 OPENROUTER_BASE_URL = 'https://openrouter.ai/api/v1/chat/completions'
 
 
@@ -22,8 +22,10 @@ Requirements:
 - Be technically feasible
 - Have a clear target market
 - Have a straight idea response, no need to sound or greet someone
-- Should sound human-generated and relatable
+- Act as a startup founder or expert giving adivce to a startup enthusisat
 - Provide brief one or two sentence description
+- Must cut across different fields uniquely and to different regions
+- Solves a problem that is not already solved
 - Be creative and unexpected
 
 Format your response to be a concise and compelling startup idea without sounding like an AI response""",
@@ -38,6 +40,8 @@ Requirements:
 - Weekend days include Friday, Saturday or Sunday be very specific
 - Should be specific to Nigerians and must be have a mix of pidgin and english in the response
 - Act like a 40-year-old Nigerin respponding to a 20-year-old Nigerian on how to enjoy the weekend
+- Should be a mix of outdoor and indoor activities
+- Just be natural and humanly relatable
 - Have a straight idea response, no need to sound or greet someone
 - Be social and engaging
 - Break from typical routines
@@ -62,7 +66,9 @@ Requirements:
 - Should be achievable
 - Push comfort zones
 - Should be short and brief.
-- Response shoul sound human-generated
+- Should be specific to young Africans wiithin the range of 18-30
+- Should involve relating to other people and learning new things
+- Response should sound human-generated
 - Be measurable
 - Have a straight idea response, no need to sound or greet someone
 - Create memorable experiences
@@ -99,8 +105,8 @@ def generate_with_openrouter(prompt):
                 }
             ],
             "max_tokens": 150,
-            "temperature": 0.8,
-            "top_p": 0.9
+            "temperature": 0.9,
+            "top_p": 1.0
         }
 
         # Headers for OpenRouter API
