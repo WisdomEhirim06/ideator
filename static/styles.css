@@ -8,15 +8,16 @@
 body {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-family: 'Inter', sans-serif;
     color: white;
+    margin: 0;
+    padding: 20px;
 }
 
 .container {
-    max-width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .ideator-card {
@@ -26,11 +27,15 @@ body {
     padding: 2rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    margin: 20px auto;
+    max-width: 800px;
 }
 
-.ideator-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+.category-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
 }
 
 .category-btn {
@@ -38,11 +43,13 @@ body {
     border: 2px solid var(--light-color);
     color: white;
     border-radius: 15px;
-    padding: 0.8rem 1.5rem;
-    margin: 0.5rem;
+    padding: 1rem;
+    width: 100%;
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 .category-btn:hover {
@@ -57,20 +64,79 @@ body {
     padding: 2rem;
     margin: 2rem 0;
     position: relative;
-    overflow: hidden;
 }
 
-.idea-text {
-    font-size: 1.2rem;
-    line-height: 1.6;
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.action-btn {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.saved-ideas {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--secondary-color);
+    padding: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.saved-ideas.open {
+    transform: translateX(0);
+}
+
+.saved-idea-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    padding: 1rem 2rem;
+    background: var(--light-color);
+    border-radius: 10px;
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
+    text-align: center;
+    z-index: 1001;
 }
 
-.idea-text.visible {
+.notification.show {
+    transform: translateX(-50%) translateY(0);
     opacity: 1;
-    transform: translateY(0);
+}
+
+.close-saved {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .loading-spinner {
@@ -88,73 +154,34 @@ body {
 }
 
 @keyframes spin {
-    to { transform: translate(-50%, -50%) rotate(360deg); }
+    to { 
+        transform: translate(-50%, -50%) rotate(360deg); 
+    }
 }
 
-.action-btn {
-    background: var(--accent-color);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 0.8rem 1.5rem;
-    margin: 0.5rem;
-    transition: all 0.3s ease;
-}
-
-.saved-ideas {
-    position: fixed;
-    right: -300px;
-    top: 0;
-    width: 300px;
-    height: 100vh;
-    background: var(--secondary-color);
-    padding: 2rem;
-    transition: right 0.3s ease;
-    overflow-y: auto;
-}
-
-.saved-ideas.open {
-    right: 0;
-}
-
-.saved-idea-item {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1rem;
-    margin: 0.5rem 0;
-    border-radius: 10px;
-    font-size: 0.9rem;
-}
-
-.notification {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 1rem 2rem;
-    background: var(--light-color);
-    border-radius: 10px;
-    transform: translateY(100px);
+.idea-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
     opacity: 0;
-    transition: all 0.3s ease;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
 }
 
-.notification.show {
-    transform: translateY(0);
+.idea-text.visible {
     opacity: 1;
+    transform: translateY(0);
 }
 
-@media (max-width: 768px) {
-    .category-btn {
-        width: 100%;
-        margin-bottom: 1rem;
-    }
-
-    .ideator-card {
-        padding: 1rem;
-    }
-
+@media (min-width: 768px) {
     .saved-ideas {
-        width: 100%;
-        height: auto;
-        position: relative;
+        width: 350px;
+    }
+    
+    .ideator-card {
+        padding: 3rem;
+    }
+
+    .category-buttons {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }
