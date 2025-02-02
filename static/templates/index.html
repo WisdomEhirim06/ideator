@@ -6,54 +6,53 @@
     <title>Ideator - AI-Powered Idea Generator</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-    <link href="/static/styles.css" rel='stylesheet'>
+    <link href="static/styles.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8 col-lg-6 ideator-card animate__animated animate__fadeIn">
-                <h1 class="text-center mb-4">Ideator</h1>
-                <p class="text-center mb-4">Generate AI-powered ideas for your next project</p>
-                
-                <div class="category-buttons text-center mb-4">
-                    <button class="category-btn" data-category="startup_ideas">
-                        <i class="fas fa-rocket me-2"></i>Startup Ideas
-                    </button>
-                    <button class="category-btn" data-category="weekend_plans">
-                        <i class="fas fa-calendar me-2"></i>Weekend Plans
-                    </button>
-                    <button class="category-btn" data-category="writing_prompts">
-                        <i class="fas fa-pen me-2"></i>Writing Prompts
-                    </button>
-                    <button class="category-btn" data-category="random_challenges">
-                        <i class="fas fa-dice me-2"></i>Random Challenges
-                    </button>
-                    <button class="category-btn" data-category="creative_projects">
-                        <i class="fas fa-paint-brush me-2"></i>Creative Projects
-                    </button>
-                </div>
+    <div class="container">
+        <div class="ideator-card animate__animated animate__fadeIn">
+            <h1 class="text-center mb-4">Ideator</h1>
+            <p class="text-center mb-4">Generate AI-powered ideas for your next project</p>
+            
+            <div class="category-buttons">
+                <button class="category-btn" data-category="startup_ideas">
+                    <i class="fas fa-rocket"></i>Startup Ideas
+                </button>
+                <button class="category-btn" data-category="weekend_plans">
+                    <i class="fas fa-calendar"></i>Weekend Plans
+                </button>
+                <button class="category-btn" data-category="writing_prompts">
+                    <i class="fas fa-pen"></i>Writing Prompts
+                </button>
+                <button class="category-btn" data-category="random_challenges">
+                    <i class="fas fa-dice"></i>Random Challenges
+                </button>
+                <button class="category-btn" data-category="creative_projects">
+                    <i class="fas fa-paint-brush"></i>Creative Projects
+                </button>
+            </div>
 
-                <div id="idea-display" class="mb-4">
-                    <div class="loading-spinner"></div>
-                    <p class="idea-text text-center">Select a category to generate an idea!</p>
-                </div>
+            <div id="idea-display">
+                <div class="loading-spinner"></div>
+                <p class="idea-text text-center">Select a category to generate an idea!</p>
+            </div>
 
-                <div class="action-buttons text-center">
-                    <button class="action-btn" id="save-idea">
-                        <i class="fas fa-bookmark me-2"></i>Save Idea
-                    </button>
-                    <button class="action-btn" id="share-idea">
-                        <i class="fas fa-share me-2"></i>Share Idea
-                    </button>
-                    <button class="action-btn" id="toggle-saved">
-                        <i class="fas fa-list me-2"></i>Saved Ideas
-                    </button>
-                </div>
+            <div class="action-buttons">
+                <button class="action-btn" id="save-idea">
+                    <i class="fas fa-bookmark me-2"></i>Save Idea
+                </button>
+                <button class="action-btn" id="share-idea">
+                    <i class="fas fa-share me-2"></i>Share Idea
+                </button>
+                <button class="action-btn" id="toggle-saved">
+                    <i class="fas fa-list me-2"></i>Saved Ideas
+                </button>
             </div>
         </div>
     </div>
 
     <div class="saved-ideas">
+        <button class="close-saved">&times;</button>
         <h3 class="mb-4">Saved Ideas</h3>
         <div id="saved-ideas-list"></div>
     </div>
@@ -63,6 +62,6 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-    <script src="/static/scripts.js"></script>
+    <script src="static/scripts.js"></script>
 </body>
 </html>
