@@ -1,9 +1,14 @@
 # Ideator 
 
+## 💡 Ideator, Check it out [here](https://ideator-sable.vercel.app/)
+
 ## Idea Generator App using Flask and OpenRouter API
+
+
 
 ## Overview
 The Idea Generator App is a Flask-based web application that generates creative ideas based on predefined categories. By using the OpenRouter API and the Mistral AI model, the app serves a variety of unique ideas tailored to specific categories, such as startup ideas, weekend plans, writing prompts, challenges, and creative projects.
+
 
 ## Skills & Technologies Used
 - **Backend Framework**: Flask
